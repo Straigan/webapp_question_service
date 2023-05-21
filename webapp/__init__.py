@@ -3,7 +3,7 @@ from flask_migrate import Migrate
 
 from webapp.db import db
 from webapp.question_service.views import blueprint as question_service_blueprint
-from webapp.models import Question_answer
+from webapp.question_service.models import Question_answer
 
 
 def create_app():
