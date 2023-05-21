@@ -35,5 +35,7 @@ POSTGRES_PASSWORD=flaskpassword
 docker-compose up  
 
 Для отправки запроса с запрашиваемым колличеством вопросов, введите в консоли:  
+
 curl -i -H "Content-Type: application/json" -X POST -d '{"questions_num": 2}' http://localhost:5000/api/v1.0  
+
 В запросе укажите запрашиваемое кол-во вопрсово: {"questions_num": 2}.
