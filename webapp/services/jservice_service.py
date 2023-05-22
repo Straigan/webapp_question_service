@@ -4,7 +4,7 @@ from webapp.db import db
 from webapp.question_service.models import Question_answer
 
 
-def get_question_jservice(questions_quantity=1):
+def get_question_jservice(questions_quantity: int=1) -> dict:
     """ 
         После получения колличества запрашиваемых вопросов сервис, в свою очередь, 
         запрашивает с публичного API (англоязычные вопросы для викторин) 
@@ -17,7 +17,7 @@ def get_question_jservice(questions_quantity=1):
     return questions_in_jservice
 
 
-def save_question_in_db(question):
+def save_question_in_db(question: dict) -> None:
     """Сохранение данных вопроса в базу данных"""
 
     add_question = Question_answer(
@@ -30,7 +30,7 @@ def save_question_in_db(question):
     db.session.commit()
     
 
-def process_check_to_valid_and_save_questions(data_questions_num):
+def process_check_to_valid_and_save_questions(data_questions_num: int) -> None:
     try:
         questions_in_jservice = get_question_jservice(data_questions_num)
     except:

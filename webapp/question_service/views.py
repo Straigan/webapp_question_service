@@ -9,7 +9,7 @@ from webapp.services.jservice_service import process_check_to_valid_and_save_que
 blueprint = Blueprint('question_service',  __name__)
 
 @blueprint.route('/api/v1.0', methods=['POST'])
-def post_questions_num():
+def post_questions_num() -> dict:
     """Сервис на вход принимает запросы с содержимым вида {"questions_num": integer}"""
 
     data_questions_num = request.json['questions_num']
